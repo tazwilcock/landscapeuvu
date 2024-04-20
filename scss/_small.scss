@@ -1,0 +1,141 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+  height: 100%;
+}
+
+/*---- apply a natural box layout model to all elements -------*/
+* {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: $bodyText;
+}
+
+#headerWrapper {
+  background-color: $bgColor;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px $gutter;
+  align-items: center;
+  img {
+    height: 40px;
+  }
+  .tel {
+    color: white;
+    text-decoration: none;
+  }
+}
+
+.hero-text-parent {
+  position: relative;
+}
+
+h1 {
+  position: absolute;
+  left: 20px;
+  top: 10;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  z-index: 99;
+  font-size: 18px;
+  max-width: 200px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+main {
+  padding: 0;
+  .swiper,
+  .swiper img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+}
+
+.image-mask-section {
+  display: grid;
+  padding: 20px 10px;
+  gap: 20px;
+  .mask-card {
+    position: relative;
+
+    h2 {
+      font-size: 20px;
+      margin: 0;
+      padding: 5px;
+      text-align: center;
+      background-color: $bgColor;
+      color: white;
+      border-radius: 10px 10px 0 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 0 0 10px 10px;
+    }
+    img:last-child {
+      position: absolute;
+      bottom: 0;
+    }
+  }
+}
+
+.clip-path-section-container {
+  padding: 40px 20px;
+  background: rgb(249, 196, 85);
+  background: linear-gradient(
+    163deg,
+    rgba(249, 196, 85, 0.6) 0%,
+    rgba(247, 121, 38, 0.6) 100%
+  );
+
+  .clip-parent {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 9px;
+    div {
+      margin-left: auto;
+      margin-right: auto;
+      img {
+        width: 100%;
+        max-width: 135px;
+        height: auto;
+        clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
+        transition: 0.2s ease-in;
+        &:hover {
+          transform: rotate(15deg);
+        }
+      }
+      p {
+        max-width: 135px;
+      }
+    }
+  }
+}
+
+#footerWrapper {
+  background-color: $bgColor;
+}
+
+footer {
+  padding: 0.7rem $gutter;
+  color: white;
+  text-align: center;
+  p {
+    margin: 0;
+    font-weight: 100;
+  }
+}

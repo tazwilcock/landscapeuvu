@@ -1,0 +1,124 @@
+header {
+  img {
+    height: 70px;
+  }
+  .tel {
+    font-size: 19px;
+    color: $accentYellow;
+  }
+  .tel:hover {
+    color: $accentOrange;
+  }
+}
+
+h1 {
+  position: absolute;
+  left: 50%;
+  top: 10;
+  padding: 0.5rem 0.7rem;
+  border-radius: 10px;
+  z-index: 99;
+  font-size: 22px;
+  max-width: 300px;
+  background-color: rgba(255, 255, 255, 0.35);
+}
+
+main {
+  .swiper,
+  .swiper img {
+    height: 300px;
+  }
+}
+
+.image-mask-section {
+  grid-template-columns: 1fr 1fr;
+}
+
+.clip-path-section-container {
+  .clip-parent {
+    div {
+      display: grid;
+      align-items: center;
+      grid-template-columns: 150px auto;
+      column-gap: 5px;
+      img {
+        max-width: 150px;
+      }
+      p {
+        max-width: 214px;
+      }
+    }
+  }
+}
+
+nav button {
+  display: none;
+}
+
+nav {
+  background-color: $menuColor;
+
+  ul {
+    display: flex;
+    list-style-type: none;
+    border-left: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  ul li {
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  ul li a {
+    display: block;
+    font-size: 0.8rem;
+    padding: 0.9rem 1.2rem;
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: background 0.3s linear;
+  }
+  ul li a:hover {
+    background: rgba(0, 149, 255, 0.509);
+  }
+
+  #primaryNav li.parent > a:after {
+    content: "\25BC";
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.5);
+    float: left;
+    padding-right: 4px;
+    padding-top: 2px;
+  }
+
+  ul li ul {
+    display: flex;
+    flex-direction: column;
+    background-color: darken($menuColor, 5%);
+    padding-left: 0;
+    border: none;
+    width: 10rem;
+    position: absolute;
+    left: -999rem;
+    z-index: 99;
+  }
+
+  ul li ul li {
+    border-right: none;
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+  }
+
+  ul li:hover ul {
+    left: auto;
+    margin-left: 0;
+  }
+
+  ul li.active {
+    background: rgba(0, 149, 255, 0.509);
+  }
+}
+
+ul#primaryNav.open {
+  margin: 0;
+}
+ul#primaryNav {
+  margin: 0;
+  padding: 0 18px;
+  list-style-type: none;
+}
