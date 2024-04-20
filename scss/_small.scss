@@ -31,6 +31,7 @@ header {
   align-items: center;
   img {
     height: 40px;
+    border-radius: 20px;
   }
   .tel {
     color: white;
@@ -44,8 +45,8 @@ header {
 
 h1 {
   position: absolute;
-  left: 20px;
-  top: 10;
+  left: 10px;
+  top: 0px;
   padding: 0.5rem 0.7rem;
   border-radius: 10px;
   z-index: 99;
